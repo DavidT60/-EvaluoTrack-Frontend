@@ -25,8 +25,27 @@ const Login: React.FC<LoginProps> = ({ onNavigate }) => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    try {
+      const response = await fetch("http://localhost:3000/users/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData), // send formData as JSON
+      });
+  
+      if (!response.ok) {
+        throw new Error("Error creating user");
+      }
+  
+      const data = await response.json();
+      console.log("✅ Usuario creado:", data);
+    } catch (error) {
+      console.error("❌ Error:", error);
+    }
+
     console.log('Datos de login:', formData);
   };
 

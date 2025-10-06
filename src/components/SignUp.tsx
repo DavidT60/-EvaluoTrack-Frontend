@@ -29,8 +29,29 @@ const SignUp: React.FC<SignUpProps> = ({ onNavigate }) => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("Post Request...")
+
+    try {
+      const response = await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData), // send formData as JSON
+      });
+  
+      if (!response.ok) {
+        throw new Error("Error creating user");
+      }
+  
+      const data = await response.json();
+      console.log("✅ Usuario creado:", data);
+    } catch (error) {
+      console.error("❌ Error:", error);
+    }
+
     console.log('Datos de registro:', formData);
   };
 
