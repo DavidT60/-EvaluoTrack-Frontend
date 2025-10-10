@@ -41,7 +41,7 @@ const Login: React.FC<LoginProps> = ({ onNavigate }) => {
       }
   
       const data = await response.json();
-      console.log("✅ Usuario creado:", data);
+      console.log("✅ Usuario Registrado:", data);
     } catch (error) {
       console.error("❌ Error:", error);
     }

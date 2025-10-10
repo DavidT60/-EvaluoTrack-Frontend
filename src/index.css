@@ -450,3 +450,35 @@ url('/public/images/EvaluotrackFondo.png') center/cover no-repeat;}
   max-width: 800px;
   
 }
+/* Global API Error - Appears at the top of the form */
+.api-error {
+  background-color: #fce4e4; /* Light red background */
+  color: #c0392b;           /* Dark red text */
+  border: 1px solid #c0392b;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Individual Input Error - Appears below a field */
+.input-error-text {
+  color: #e74c3c; /* Bright red */
+  font-size: 0.85rem;
+  margin-top: -10px; /* Pull it closer to the input above */
+  margin-bottom: 10px;
+}
+
+
+/* Success Notification */
+.success-message {
+  background-color: #d4edda; /* Light green background */
+  color: #155724;           /* Dark green text */
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  text-align: center;
+}
